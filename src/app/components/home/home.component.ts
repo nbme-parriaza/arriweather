@@ -13,8 +13,9 @@ export class HomeComponent implements OnInit {
   public currentTemperature: string = '';
   public currentTemperatureUnit: string = '';
   public currentCondition: string = '';
+  public weatherText: string = '';
   public detailsLink: string = '';
-  public weatherIcon: number = 0;
+  public weatherIcon: string = '';
   public dailyForecasts: Array<forecast> = [];
 
 
@@ -33,7 +34,11 @@ export class HomeComponent implements OnInit {
         this.currentTemperature = PhiladelphiaWeather.Temperature.Imperial.Value;
         this.currentTemperatureUnit = PhiladelphiaWeather.Temperature.Imperial.Unit;
         this.detailsLink = PhiladelphiaWeather.Link;
-        this.weatherIcon = PhiladelphiaWeather.WeatherIcon;
+        if (PhiladelphiaWeather.WeatherIcon < 10) {
+          this.weatherIcon = '0' + PhiladelphiaWeather.WeatherIcon;
+        }
+        else this.weatherIcon = PhiladelphiaWeather.WeatherIcon;
+        this.weatherText = PhiladelphiaWeather.WeatherText;
         console.log(weather)
         console.log(this.currentTemperature)
         

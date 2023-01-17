@@ -1,18 +1,15 @@
+<h3>Current Weather</h3>
+<h4>Philadelphia, PA 19146</h4>
 <mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>Current Weather</mat-card-title>
-    <mat-card-subtitle>Philadelphia, PA 19146</mat-card-subtitle>
-  </mat-card-header>
   <img
-    src="https://developer.accuweather.com/sites/default/files/0{{
+    src="https://developer.accuweather.com/sites/default/files/{{
       weatherIcon
     }}-s.png"
     alt="weather icon"
   />
   <mat-card-content>
-    <p>
-      Current Temperature: {{ currentTemperature }}{{ currentTemperatureUnit }}
-    </p>
+    <p>Temperature: {{ currentTemperature }}{{ currentTemperatureUnit }}</p>
+    <p>{{ weatherText }}</p>
   </mat-card-content>
   <mat-card-actions>
     <a href="{{ detailsLink }}" target="_blank">
