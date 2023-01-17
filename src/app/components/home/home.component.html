@@ -1,1 +1,37 @@
-<p>home works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Current Weather</mat-card-title>
+    <mat-card-subtitle>Philadelphia, PA 19146</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    src="https://developer.accuweather.com/sites/default/files/0{{
+      weatherIcon
+    }}-s.png"
+    alt="weather icon"
+  />
+  <mat-card-content>
+    <p>
+      Current Temperature: {{ currentTemperature }}{{ currentTemperatureUnit }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a href="{{ detailsLink }}" target="_blank">
+      <button mat-button>Details</button>
+    </a>
+  </mat-card-actions>
+</mat-card>
+
+<h3>5 Day Forecast</h3>
+<mat-list>
+  <mat-list-item *ngFor="let day of dailyForecasts">
+    <p matLine>{{ day.Date }}</p>
+    <p matLine>
+      Low: {{ day.Temperature.Minimum.Value }}
+      {{ day.Temperature.Minimum.Unit }}
+    </p>
+    <p matLine>
+      High: {{ day.Temperature.Maximum.Value }}
+      {{ day.Temperature.Maximum.Unit }}
+    </p>
+  </mat-list-item>
+</mat-list>
