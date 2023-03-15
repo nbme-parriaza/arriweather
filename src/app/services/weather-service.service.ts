@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpResponse, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { postalCodeLookupResponse } from '../models/postalCodeLookupResponse.model';
+import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class WeatherService {
   private apiKey = environment.apiKey;
 
@@ -22,7 +19,7 @@ export class WeatherService {
     return this.http.get<any>(`${this.postalCodeSearchUrl}?apikey=${this.apiKey}&q=19146`);
   }
 
-  getPhiladelphiaWeather(key: string): Observable<any> {
+  getPhiladelphiaWeather(key: string): Observable<string> {
     return this.http.get<any>(`${this.currentConditionsUrl}${key}?apikey=${this.apiKey}`)
   }
 

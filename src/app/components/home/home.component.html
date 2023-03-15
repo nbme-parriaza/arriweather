@@ -1,5 +1,5 @@
 <button>
-  <a href="/location">Go to random location</a>
+  <a href="/newComponent">Go to new component</a>
 </button>
 
 <mat-card class="example-card">
@@ -20,23 +20,8 @@
   </mat-card-actions>
 </mat-card>
 
-<h3>5 Day Forecast</h3>
-<mat-list>
-  <mat-list-item *ngFor="let day of dailyForecasts">
-    <p matLine>{{ day.Date }}</p>
-    <p matLine>
-      Low: {{ day.Temperature.Minimum.Value }}
-      {{ day.Temperature.Minimum.Unit }}
-    </p>
-    <p matLine>
-      High: {{ day.Temperature.Maximum.Value }}
-      {{ day.Temperature.Maximum.Unit }}
-    </p>
-  </mat-list-item>
-</mat-list>
-
-<table mat-table [dataSource]="dailyForecasts">
-  <ng-container matColumnDef="date">
+<table mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="data">
     <th mat-header-cell *matHeaderCellDef>Date</th>
     <td mat-cell *matCellDef="let day">{{ day.Date }}</td>
   </ng-container>
