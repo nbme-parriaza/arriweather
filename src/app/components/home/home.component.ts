@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   public detailsLink: string = '';
   public weatherIcon: string = '';
   public dailyForecasts: Array<forecast> = [];
+  public displayedColumns: string[] = ['date', 'low', 'high'];
 
 
   constructor(private weatherService: WeatherService) { 
