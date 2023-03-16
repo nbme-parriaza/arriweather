@@ -1,5 +1,14 @@
 # Arriweather
 
+## Assignment
+- fix compilation and runtime errors.
+- create a new component called "list". It should only be shown from the "/list" route.
+- Add a button on the home page that takes you to the new component.
+- Pass the dailyForecasts array into the list component.  Use this array to display the data without the use of material.
+- Add button to new component that will be used for toggling whether or not to show the input list items from home component when clicked.
+- Implement logic to not display the table in new compnent if values are empty or null.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
 
 ## Development server
